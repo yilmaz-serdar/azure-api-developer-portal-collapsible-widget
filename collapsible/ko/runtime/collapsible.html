@@ -1,0 +1,105 @@
+<style>
+    .collapsible {
+        overflow-x: hidden;
+        color: #333;
+        margin: 0 auto;
+    }
+
+    .section {
+        padding: 15px 0;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    .panel-title {
+        font-size: 19px;
+        width: 100%;
+        position: relative;
+        margin: 0;
+        padding: 10px 10px 0 48px;
+        display: block;
+        cursor: pointer;
+    }
+
+    .panel-content {
+        font-size: 15px;
+        padding: 0px 14px;
+        margin: 0 40px;
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        opacity: 0;
+        -webkit-transition: .4s ease;
+        -moz-transition: .4s ease;
+        -o-transition: .4s ease;
+        transition: .4s ease;
+    }
+
+    .panel:checked~.panel-content {
+        height: auto;
+        opacity: 1;
+        padding-top: 14px;
+    }
+
+    .plus {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 3px;
+        font-size: 35px;
+        line-height: 100%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        -webkit-transition: .2s ease;
+        -moz-transition: .2s ease;
+        -o-transition: .2s ease;
+        transition: .2s ease;
+    }
+
+    .panel:checked~.plus {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .panel {
+        display: none;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+</style>
+
+<div class="collapsible">
+    <!-- ko foreach: { data: sections, as: 'item' } -->
+    <div class="section">
+        <input data-bind="attr: { id: 'section_' + $index() }" type="checkbox" class="panel">
+        <div class="plus">+</div>
+        <label data-bind="attr: { for: 'section_' + $index() }, text: item.title" class="panel-title"></label>
+        <div class="panel-content">
+            <p data-bind="text: item.explanation"></p>
+        </div>
+    </div>
+    <!-- /ko -->
+
+    <!-- ko if: sections().length === 0 -->
+    <div class="table-row" role="row">
+        <div class="col-12">Item not found</div>
+    </div>
+    <!-- /ko -->
+</div>
