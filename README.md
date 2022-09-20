@@ -1,7 +1,7 @@
 # Azure API Developer Portal Collapsible Widget
 Azure API Developer Portalde drop-down paneller oluşturabilmek için kullanılabilecek custom widget. FAQ ve benzeri sayfalar hazırlanırken kullanılabilir. 
 
-<p ><img src="/images/collapsible-widget.png" width=55%></p>
+<img src="/images/collapsible-widget.png" width=55%>
 
 ## Widget'ı projeye nasıl ekleyebilirim?
 **collapsible** klasörü, portal projesinde **community/widgets** klasörü içerisine kopyalanır ve **src** klasörü içerisinde yer alan design, publish ve runtime modüllerine bind edilir. 
@@ -41,5 +41,5 @@ import { Collapsible } from "../community/widgets/collapsible/ko/runtime/collaps
 ## Widget'ı nasıl kullanabilirim? 
 **Add Widget** panelinden **Collapsible: Basic** widget'ı seçilerek sayfaya eklenir. <br/>
 ![Add Collapsible Widget](/images/add-collapsible-widget.png) <br/>
-Widget'ın paneli açılarak başlık ve açıklama bilgileri girilir. <br/>
+Widget paneli açılarak başlık ve açıklama bilgileri girilir. <br/>
 <img src="/images/add-section.png" width=60%>  <br/>
